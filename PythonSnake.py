@@ -103,15 +103,15 @@ def check_collisions(snake):
     x, y = snake.coordinates[0]
 
     if x < 0 or x >= GAME_WIDTH:
-        print("GAME OVER")
+        print("GAME OVER..")
         return True
     elif y < 0 or y >= GAME_WIDTH:
-        print("GAME OVER")
+        print("GAME OVER..")
         return True
 
     for body_part in snake.coordinates[1:]:
         if x == body_part[0] and y == body_part[1]:
-            print("GAME OVER")
+            print("GAME OVER..")
             return True
 
     return False
@@ -119,7 +119,7 @@ def check_collisions(snake):
 def game_over():
 
     canvas.delete(ALL)
-    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('arial', 70), text="GAME OVER", fill="#E7471D", tag="gameover")
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('verdana', 50), text="GAME OVER..", fill="#E7471D", tag="gameover")
 
 
 window = Tk()
@@ -129,7 +129,7 @@ window.resizable(False, False)
 score = 0
 direction = 'down'
 
-label = Label(window, text="Score:{}".format(score), font=('arial', 40))
+label = Label(window, text="Score:{}".format(score), font=('verdana', 40))
 label.pack()
 
 canvas = Canvas(window, bg=BACKGROUND_COLOR, height=GAME_HEIGHT, width=GAME_WIDTH)
